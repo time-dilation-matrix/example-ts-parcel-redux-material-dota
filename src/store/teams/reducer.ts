@@ -1,5 +1,5 @@
-import { Reducer } from 'redux'
-import { TeamsState, TeamsActionTypes } from './types'
+import { Reducer } from "redux"
+import { TeamsState, TeamsActionTypes } from "./types"
 
 // Type-safe initialState!
 export const initialState: TeamsState = {

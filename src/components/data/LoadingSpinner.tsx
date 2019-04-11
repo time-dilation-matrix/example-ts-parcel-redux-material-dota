@@ -1,6 +1,6 @@
-import * as React from 'react'
-import { keyframes } from 'react-emotion'
-import styled from '../../utils/styled'
+import * as React from "react"
+import { keyframes } from "react-emotion"
+import styled from "../../utils/styled"
 
 const LoadingSpinner: React.SFC = () => (
   <Spinner>
@@ -30,7 +30,7 @@ const CubeMove = keyframes`
   }
 `
 
-const Spinner = styled('div')`
+const Spinner = styled("div")`
   margin: 100px auto;
   width: 40px;
   height: 40px;

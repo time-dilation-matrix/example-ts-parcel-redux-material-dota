@@ -1,16 +1,16 @@
-import { combineReducers, Dispatch, Action, AnyAction } from 'redux'
-import { all, fork } from 'redux-saga/effects'
-import { connectRouter, RouterState } from 'connected-react-router'
-import { History } from 'history'
+import { combineReducers, Dispatch, Action, AnyAction } from "redux"
+import { all, fork } from "redux-saga/effects"
+import { connectRouter, RouterState } from "connected-react-router"
+import { History } from "history"
 
-import { LayoutState, layoutReducer } from './layout'
+import { LayoutState, layoutReducer } from "./layout"
 
-import heroesSaga from './heroes/sagas'
-import { heroesReducer } from './heroes/reducer'
-import { HeroesState } from './heroes/types'
-import teamsSaga from './teams/sagas'
-import { TeamsState } from './teams/types'
-import { teamsReducer } from './teams/reducer'
+import heroesSaga from "./heroes/sagas"
+import { heroesReducer } from "./heroes/reducer"
+import { HeroesState } from "./heroes/types"
+import teamsSaga from "./teams/sagas"
+import { TeamsState } from "./teams/types"
+import { teamsReducer } from "./teams/reducer"
 
 // The top-level state object
 export interface ApplicationState {

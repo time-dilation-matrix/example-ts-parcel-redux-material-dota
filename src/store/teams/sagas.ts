@@ -1,14 +1,14 @@
-import { all, call, fork, put, takeEvery, takeLatest } from 'redux-saga/effects'
-import { TeamsActionTypes } from './types'
-import { fetchError, fetchSuccess, selectTeam, teamSelected } from './actions'
-import { callApi } from '../../utils/api'
+import { all, call, fork, put, takeEvery, takeLatest } from "redux-saga/effects"
+import { TeamsActionTypes } from "./types"
+import { fetchError, fetchSuccess, selectTeam, teamSelected } from "./actions"
+import { callApi } from "../../utils/api"
 
-const API_ENDPOINT = process.env.REACT_APP_API_ENDPOINT || 'https://api.opendota.com'
+const API_ENDPOINT = process.env.REACT_APP_API_ENDPOINT || "https://api.opendota.com"
 
 function* handleFetch() {
   try {
     // To call async functions, use redux-saga's `call()`.
-    const res = yield call(callApi, 'get', API_ENDPOINT, '/teams')
+    const res = yield call(callApi, "get", API_ENDPOINT, "/teams")
 
     if (res.error) {
       yield put(fetchError(res.error))
@@ -19,15 +19,15 @@ function* handleFetch() {
     if (err instanceof Error) {
       yield put(fetchError(err.stack!))
     } else {
-      yield put(fetchError('An unknown error occured.'))
+      yield put(fetchError("An unknown error occured."))
     }
   }
 }
 
 function* handleSelect(action: ReturnType<typeof selectTeam>) {
   try {
-    const detail = yield call(callApi, 'get', API_ENDPOINT, `/teams/${action.payload}`)
-    const players = yield call(callApi, 'get', API_ENDPOINT, `/teams/${action.payload}/players`)
+    const detail = yield call(callApi, "get", API_ENDPOINT, `/teams/${action.payload}`)
+    const players = yield call(callApi, "get", API_ENDPOINT, `/teams/${action.payload}/players`)
 
     if (detail.error || players.error) {
       yield put(fetchError(detail.error || players.error))
@@ -38,7 +38,7 @@ function* handleSelect(action: ReturnType<typeof selectTeam>) {
     if (err instanceof Error) {
       yield put(fetchError(err.stack!))
     } else {
-      yield put(fetchError('An unknown error occured.'))
+      yield put(fetchError("An unknown error occured."))
     }
   }
 }

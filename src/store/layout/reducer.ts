@@ -1,9 +1,9 @@
-import { Reducer } from 'redux'
-import { LayoutState, LayoutActionTypes } from './types'
+import { Reducer } from "redux"
+import { LayoutState, LayoutActionTypes } from "./types"
 
 // Type-safe initialState!
 export const initialState: LayoutState = {
-  theme: 'light'
+  theme: "light"
 }
 
 // Thanks to Redux 4's much simpler typings, we can take away a lot of typings on the reducer side,

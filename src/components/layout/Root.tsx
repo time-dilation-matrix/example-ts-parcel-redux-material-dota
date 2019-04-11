@@ -1,5 +1,5 @@
-import * as React from 'react'
-import styled from '../../utils/styled'
+import * as React from "react"
+import styled from "../../utils/styled"
 
 interface RootProps {
   className?: string
@@ -9,7 +9,7 @@ const Root: React.SFC<RootProps> = ({ children }) => <Wrapper>{children}</Wrappe
 
 export default Root
 
-const Wrapper = styled('div')`
+const Wrapper = styled("div")`
   display: flex;
   flex-direction: column;
   width: 100%;

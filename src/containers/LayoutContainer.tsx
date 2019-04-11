@@ -1,9 +1,9 @@
-import * as React from 'react'
-import { ReactReduxContext } from 'react-redux'
+import * as React from "react"
+import { ReactReduxContext } from "react-redux"
 
-import { ApplicationState } from '../store'
-import { ThemeColors } from '../store/layout'
-import * as layoutActions from '../store/layout/actions'
+import { ApplicationState } from "../store"
+import { ThemeColors } from "../store/layout"
+import * as layoutActions from "../store/layout/actions"
 
 // Now here is an example of creating container components.
 //

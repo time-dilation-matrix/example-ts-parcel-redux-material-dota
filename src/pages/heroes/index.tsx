@@ -1,19 +1,18 @@
-import * as React from 'react'
-import { Link } from 'react-router-dom'
-import { connect } from 'react-redux'
+import * as React from "react"
+import { Link } from "react-router-dom"
+import { connect } from "react-redux"
 
-import styled from '../../utils/styled'
-import Page from '../../components/layout/Page'
-import Container from '../../components/layout/Container'
-import DataTable from '../../components/layout/DataTable'
-import LoadingOverlay from '../../components/data/LoadingOverlay'
-import LoadingOverlayInner from '../../components/data/LoadingOverlayInner'
-import LoadingSpinner from '../../components/data/LoadingSpinner'
+import styled from "../../utils/styled"
+import Page from "../../components/layout/Page"
+import Container from "../../components/layout/Container"
+import DataTable from "../../components/layout/DataTable"
+import LoadingOverlay from "../../components/data/LoadingOverlay"
+import LoadingOverlayInner from "../../components/data/LoadingOverlayInner"
+import LoadingSpinner from "../../components/data/LoadingSpinner"
 
-import { ApplicationState, ConnectedReduxProps } from '../../store'
-import { Hero } from '../../store/heroes/types'
-import { fetchRequest } from '../../store/heroes/actions'
-import { Dispatch } from 'redux'
+import { ApplicationState, ConnectedReduxProps } from "../../store"
+import { Hero } from "../../store/heroes/types"
+import { fetchRequest } from "../../store/heroes/actions"
 
 // Separate state props + dispatch props to their own interfaces.
 interface PropsFromState {
@@ -30,7 +29,7 @@ interface PropsFromDispatch {
 // Combine both state + dispatch props - as well as any props we want to pass - in a union type.
 type AllProps = PropsFromState & PropsFromDispatch & ConnectedReduxProps
 
-const API_ENDPOINT = process.env.REACT_APP_API_ENDPOINT || 'https://api.opendota.com'
+const API_ENDPOINT = process.env.REACT_APP_API_ENDPOINT || "https://api.opendota.com"
 
 class HeroesIndexPage extends React.Component<AllProps> {
   public componentDidMount() {
@@ -65,7 +64,7 @@ class HeroesIndexPage extends React.Component<AllProps> {
     const { loading, data } = this.props
 
     return (
-      <DataTable columns={['Hero', 'Pro Picks/Bans*', 'Pro Wins*']} widths={['auto', '', '']}>
+      <DataTable columns={["Hero", "Pro Picks/Bans*", "Pro Wins*"]} widths={["auto", "", ""]}>
         {loading && data.length === 0 && (
           <HeroLoading>
             <td colSpan={3}>Loading...</td>
@@ -112,25 +111,25 @@ export default connect(
   mapDispatchToProps
 )(HeroesIndexPage)
 
-const TableWrapper = styled('div')`
+const TableWrapper = styled("div")`
   position: relative;
   max-width: ${props => props.theme.widths.md};
   margin: 0 auto;
   min-height: 200px;
 `
 
-const HeroDetail = styled('td')`
+const HeroDetail = styled("td")`
   display: flex;
   flex-direction: row;
   align-items: center;
 `
 
-const HeroIcon = styled('img')`
+const HeroIcon = styled("img")`
   width: 32px;
   height: 32px;
 `
 
-const HeroName = styled('div')`
+const HeroName = styled("div")`
   flex: 1 1 auto;
   height: 100%;
   margin-left: 1rem;
@@ -140,7 +139,7 @@ const HeroName = styled('div')`
   }
 `
 
-const HeroLoading = styled('tr')`
+const HeroLoading = styled("tr")`
   td {
     height: 48px;
     text-align: center;

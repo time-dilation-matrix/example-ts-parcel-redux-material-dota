@@ -1,7 +1,7 @@
-import styled from '../../utils/styled'
-import { transparentize } from 'polished'
+import styled from "../../utils/styled"
+import { transparentize } from "polished"
 
-const LoadingOverlay = styled('div')`
+const LoadingOverlay = styled("div")`
   position: absolute;
   top: 0;
   bottom: 0;

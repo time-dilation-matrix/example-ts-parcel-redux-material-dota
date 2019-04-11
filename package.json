@@ -2,6 +2,12 @@
   "name": "react-redux-typescript-example",
   "version": "0.1.0",
   "private": true,
+  "scripts": {
+    "start": "parcel public/index.html",
+    "build": "parcel build public/index.html",
+    "prettify": "prettier --write './src/**/*.{ts,tsx}'",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "dependencies": {
     "connected-react-router": "^6.3.1",
     "dotenv-expand": "^4.2.0",
@@ -24,24 +30,6 @@
     "typeface-ibm-plex-sans": "^0.0.61",
     "typesafe-actions": "^2.0.4"
   },
-  "scripts": {
-    "start": "parcel public/index.html",
-    "build": "parcel build public/index.html",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "browserslist": {
-    "development": [
-      "last 2 chrome versions",
-      "last 2 firefox versions",
-      "last 2 edge versions"
-    ],
-    "production": [
-      ">1%",
-      "Firefox ESR",
-      "not ie <= 11",
-      "not op_mini all"
-    ]
-  },
   "devDependencies": {
     "@babel/core": "^7.3.4",
     "@babel/preset-env": "^7.3.4",
@@ -57,5 +45,18 @@
     "tslint": "^5.13.1",
     "tslint-config-blvd": "^1.2.1",
     "typescript": "^3.3.3333"
+  },
+  "browserslist": {
+    "development": [
+      "last 2 chrome versions",
+      "last 2 firefox versions",
+      "last 2 edge versions"
+    ],
+    "production": [
+      ">1%",
+      "Firefox ESR",
+      "not ie <= 11",
+      "not op_mini all"
+    ]
   }
 }

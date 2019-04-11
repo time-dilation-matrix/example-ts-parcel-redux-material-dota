@@ -7,6 +7,6 @@ declare interface ServiceWorkerConfig {
   onUpdate: (registration: ServiceWorkerRegistration) => void
 }
 
-declare module '*.svg'
-declare module '*.png'
-declare module '*.jpg'
+declare module "*.svg"
+declare module "*.png"
+declare module "*.jpg"

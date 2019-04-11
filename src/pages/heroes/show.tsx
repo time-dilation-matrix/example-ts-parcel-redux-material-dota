@@ -1,20 +1,19 @@
-import * as React from 'react'
-import { connect } from 'react-redux'
-import { RouteComponentProps } from 'react-router'
+import * as React from "react"
+import { connect } from "react-redux"
+import { RouteComponentProps } from "react-router"
 
-import Page from '../../components/layout/Page'
-import Container from '../../components/layout/Container'
+import Page from "../../components/layout/Page"
+import Container from "../../components/layout/Container"
 
-import { ApplicationState, ConnectedReduxProps } from '../../store'
-import { Hero } from '../../store/heroes/types'
-import { fetchRequest } from '../../store/heroes/actions'
-import styled, { Theme } from '../../utils/styled'
-import LoadingOverlay from '../../components/data/LoadingOverlay'
-import LoadingOverlayInner from '../../components/data/LoadingOverlayInner'
-import LoadingSpinner from '../../components/data/LoadingSpinner'
-import { darken } from 'polished'
-import { Themed } from 'react-emotion'
-import { Dispatch } from 'redux'
+import { ApplicationState, ConnectedReduxProps } from "../../store"
+import { Hero } from "../../store/heroes/types"
+import { fetchRequest } from "../../store/heroes/actions"
+import styled, { Theme } from "../../utils/styled"
+import LoadingOverlay from "../../components/data/LoadingOverlay"
+import LoadingOverlayInner from "../../components/data/LoadingOverlayInner"
+import LoadingSpinner from "../../components/data/LoadingSpinner"
+import { darken } from "polished"
+import { Themed } from "react-emotion"
 
 // Separate state props + dispatch props to their own interfaces.
 interface PropsFromState {
@@ -37,12 +36,9 @@ interface State {
 }
 
 // Combine both state + dispatch props - as well as any props we want to pass - in a union type.
-type AllProps = PropsFromState &
-  PropsFromDispatch &
-  RouteComponentProps<RouteParams> &
-  ConnectedReduxProps
+type AllProps = PropsFromState & PropsFromDispatch & RouteComponentProps<RouteParams> & ConnectedReduxProps
 
-const API_ENDPOINT = process.env.REACT_APP_API_ENDPOINT || 'https://api.opendota.com'
+const API_ENDPOINT = process.env.REACT_APP_API_ENDPOINT || "https://api.opendota.com"
 
 class ShowHeroesPage extends React.Component<AllProps, State> {
   constructor(props: AllProps) {
@@ -84,18 +80,18 @@ class ShowHeroesPage extends React.Component<AllProps, State> {
                   <HeroInfoboxHeading>
                     <HeroName>{selected.localized_name}</HeroName>
                     <HeroDetails>
-                      {selected.attack_type} - <span>{selected.roles.join(', ')}</span>
+                      {selected.attack_type} - <span>{selected.roles.join(", ")}</span>
                     </HeroDetails>
                   </HeroInfoboxHeading>
                   <HeroStats>
                     <HeroStatsInner>
-                      <StatAttribute attr="str" isPrimaryAttr={selected.primary_attr === 'str'}>
+                      <StatAttribute attr="str" isPrimaryAttr={selected.primary_attr === "str"}>
                         <Bullet attr="str" /> {selected.base_str || 0} + {selected.str_gain || 0}
                       </StatAttribute>
-                      <StatAttribute attr="agi" isPrimaryAttr={selected.primary_attr === 'agi'}>
+                      <StatAttribute attr="agi" isPrimaryAttr={selected.primary_attr === "agi"}>
                         <Bullet attr="agi" /> {selected.base_agi || 0} + {selected.agi_gain || 0}
                       </StatAttribute>
-                      <StatAttribute attr="int" isPrimaryAttr={selected.primary_attr === 'int'}>
+                      <StatAttribute attr="int" isPrimaryAttr={selected.primary_attr === "int"}>
                         <Bullet attr="int" /> {selected.base_int || 0} + {selected.int_gain || 0}
                       </StatAttribute>
                     </HeroStatsInner>
@@ -132,11 +128,11 @@ export default connect(
   mapDispatchToProps
 )(ShowHeroesPage)
 
-const Wrapper = styled('div')`
+const Wrapper = styled("div")`
   position: relative;
 `
 
-const HeroInfobox = styled('div')`
+const HeroInfobox = styled("div")`
   position: relative;
   background: rgba(0, 0, 0, 0.9);
   overflow: hidden;
@@ -144,7 +140,7 @@ const HeroInfobox = styled('div')`
   color: ${props => darken(0.25, props.theme.colors.white)};
 `
 
-const HeroInfoboxBlurBackground = styled('img')`
+const HeroInfoboxBlurBackground = styled("img")`
   position: absolute;
   top: -12.5%;
   left: -12.5%;
@@ -157,7 +153,7 @@ const HeroInfoboxBlurBackground = styled('img')`
   z-index: 1;
 `
 
-const HeroInfoboxInner = styled('div')`
+const HeroInfoboxInner = styled("div")`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -171,7 +167,7 @@ const HeroInfoboxInner = styled('div')`
   }
 `
 
-const HeroInfoboxImage = styled('img')`
+const HeroInfoboxImage = styled("img")`
   display: block;
   flex-shrink: 0;
   width: 180px;
@@ -185,7 +181,7 @@ const HeroInfoboxImage = styled('img')`
   border-image: initial;
 `
 
-const HeroInfoboxHeading = styled('div')`
+const HeroInfoboxHeading = styled("div")`
   flex: 1 1 100%;
   margin: 1.5rem 0 0;
   text-align: center;
@@ -196,13 +192,13 @@ const HeroInfoboxHeading = styled('div')`
   }
 `
 
-const HeroName = styled('h1')`
+const HeroName = styled("h1")`
   margin: 0;
   color: ${props => props.theme.colors.white};
   font-weight: 500;
 `
 
-const HeroDetails = styled('p')`
+const HeroDetails = styled("p")`
   margin: 0.5rem 0 0;
   color: ${props => props.theme.colors.white};
   font-size: 0.8rem;
@@ -214,7 +210,7 @@ const HeroDetails = styled('p')`
   }
 `
 
-const HeroStats = styled('div')`
+const HeroStats = styled("div")`
   display: block;
   max-width: 340px;
   margin: 1.5rem 0 0;
@@ -228,30 +224,29 @@ const HeroStats = styled('div')`
   }
 `
 
-const HeroStatsInner = styled('div')`
+const HeroStatsInner = styled("div")`
   display: flex;
 `
 
 interface StatAttributeProps {
-  attr: 'str' | 'agi' | 'int'
+  attr: "str" | "agi" | "int"
   isPrimaryAttr?: boolean
 }
 
-const StatAttribute = styled('div')`
+const StatAttribute = styled("div")`
   display: flex;
   align-items: center;
   flex: 1 1 0;
   padding: 0 1rem;
   font-size: 0.8rem;
-  color: ${(props: Themed<StatAttributeProps, Theme>) =>
-    props.isPrimaryAttr && props.theme.colors.attrs[props.attr]};
+  color: ${(props: Themed<StatAttributeProps, Theme>) => props.isPrimaryAttr && props.theme.colors.attrs[props.attr]};
 `
 
 interface BulletProps {
-  attr: 'str' | 'agi' | 'int'
+  attr: "str" | "agi" | "int"
 }
 
-const Bullet = styled('div')`
+const Bullet = styled("div")`
   flex-shrink: 0;
   height: 0.5rem;
   width: 0.5rem;

@@ -33,12 +33,12 @@ export interface TeamSelectedPayload {
 // personally, I use the `@@context/ACTION_TYPE` convention, to follow the convention
 // of Redux's `@@INIT` action.
 export const enum TeamsActionTypes {
-  FETCH_REQUEST = '@@teams/FETCH_REQUEST',
-  FETCH_SUCCESS = '@@teams/FETCH_SUCCESS',
-  FETCH_ERROR = '@@teams/FETCH_ERROR',
-  SELECT_TEAM = '@@teams/SELECT_TEAM',
-  SELECTED = '@@teams/SELECTED',
-  CLEAR_SELECTED = '@@teams/CLEAR_SELECTED'
+  FETCH_REQUEST = "@@teams/FETCH_REQUEST",
+  FETCH_SUCCESS = "@@teams/FETCH_SUCCESS",
+  FETCH_ERROR = "@@teams/FETCH_ERROR",
+  SELECT_TEAM = "@@teams/SELECT_TEAM",
+  SELECTED = "@@teams/SELECTED",
+  CLEAR_SELECTED = "@@teams/CLEAR_SELECTED"
 }
 
 // Declare state types with `readonly` modifier to get compile time immutability.

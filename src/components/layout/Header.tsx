@@ -1,9 +1,9 @@
-import * as React from 'react'
-import { NavLink } from 'react-router-dom'
-import styled from '../../utils/styled'
-import LayoutContainer from '../../containers/LayoutContainer'
-import Container from './Container'
-import { css } from 'emotion'
+import * as React from "react"
+import { NavLink } from "react-router-dom"
+import styled from "../../utils/styled"
+import LayoutContainer from "../../containers/LayoutContainer"
+import Container from "./Container"
+import { css } from "emotion"
 
 interface HeaderProps {
   title: string
@@ -31,7 +31,7 @@ const Header: React.SFC<HeaderProps> = ({ title }) => (
           {({ theme, setTheme }) => (
             <React.Fragment>
               <CurrentTheme>Current theme: {theme}</CurrentTheme>
-              <ThemeSwitcherButton onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}>
+              <ThemeSwitcherButton onClick={() => setTheme(theme === "light" ? "dark" : "light")}>
                 Switch theme
               </ThemeSwitcherButton>
             </React.Fragment>
@@ -44,7 +44,7 @@ const Header: React.SFC<HeaderProps> = ({ title }) => (
 
 export default Header
 
-const Wrapper = styled('header')`
+const Wrapper = styled("header")`
   padding: 0.5rem 1.5rem;
   background-color: ${props => props.theme.colors.brand};
   color: ${props => props.theme.colors.white};
@@ -62,11 +62,11 @@ const HeaderInner = styled(Container)`
   }
 `
 
-const HeaderLeft = styled('div')`
+const HeaderLeft = styled("div")`
   padding-right: 1rem;
 `
 
-const HeaderNav = styled('nav')`
+const HeaderNav = styled("nav")`
   flex: 1 1 auto;
   margin: 1rem 0;
 
@@ -83,20 +83,20 @@ const HeaderLinkActive = css`
   text-decoration: underline;
 `
 
-const HeaderRight = styled('div')`
+const HeaderRight = styled("div")`
   padding-left: 1rem;
 `
 
-const Title = styled('h2')`
+const Title = styled("h2")`
   margin: 0;
   font-weight: 500;
 `
 
-const CurrentTheme = styled('span')`
+const CurrentTheme = styled("span")`
   margin-right: 1rem;
 `
 
-const ThemeSwitcherButton = styled('button')`
+const ThemeSwitcherButton = styled("button")`
   display: inline-block;
   padding: 0.25rem 0.5rem;
   border: 1px solid ${props => props.theme.colors.white};

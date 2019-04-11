@@ -1,6 +1,6 @@
-import styled from '../../utils/styled'
+import styled from "../../utils/styled"
 
-const Page = styled('div')`
+const Page = styled("div")`
   display: flex;
   flex-direction: row;
   flex: 1 1 auto;

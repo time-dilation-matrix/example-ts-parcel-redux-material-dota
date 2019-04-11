@@ -1,5 +1,5 @@
-import { Reducer } from 'redux'
-import { HeroesState, HeroesActionTypes } from './types'
+import { Reducer } from "redux"
+import { HeroesState, HeroesActionTypes } from "./types"
 
 // Type-safe initialState!
 export const initialState: HeroesState = {

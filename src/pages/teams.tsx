@@ -1,11 +1,11 @@
-import * as React from 'react'
-import { connect } from 'react-redux'
-import { RouteComponentProps, Route, Switch } from 'react-router-dom'
+import * as React from "react"
+import { connect } from "react-redux"
+import { RouteComponentProps, Route, Switch } from "react-router-dom"
 
-import TeamsIndexPage from './teams/index'
-import ShowTeamsPage from './teams/show'
+import TeamsIndexPage from "./teams/index"
+import ShowTeamsPage from "./teams/show"
 
-import { ApplicationState, ConnectedReduxProps } from '../store'
+import { ApplicationState, ConnectedReduxProps } from "../store"
 
 // Separate state props + dispatch props to their own interfaces.
 interface PropsFromState {
@@ -22,8 +22,8 @@ class TeamsPage extends React.Component<AllProps> {
 
     return (
       <Switch>
-        <Route exact path={match.path + '/'} component={TeamsIndexPage} />
-        <Route path={match.path + '/:id'} component={ShowTeamsPage} />
+        <Route exact path={match.path + "/"} component={TeamsIndexPage} />
+        <Route path={match.path + "/:id"} component={ShowTeamsPage} />
       </Switch>
     )
   }

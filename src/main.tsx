@@ -1,14 +1,14 @@
-import * as React from 'react'
-import { Provider } from 'react-redux'
-import { ConnectedRouter } from 'connected-react-router'
-import { Store } from 'redux'
-import { History } from 'history'
-import { ThemeProvider } from 'emotion-theming'
+import * as React from "react"
+import { Provider } from "react-redux"
+import { ConnectedRouter } from "connected-react-router"
+import { Store } from "redux"
+import { History } from "history"
+import { ThemeProvider } from "emotion-theming"
 
-import Routes from './routes'
-import { ApplicationState } from './store'
-import * as themes from './styles/theme'
-import LayoutContainer from './containers/LayoutContainer'
+import Routes from "./routes"
+import { ApplicationState } from "./store"
+import * as themes from "./styles/theme"
+import LayoutContainer from "./containers/LayoutContainer"
 
 // Any additional component props go here.
 interface MainProps {
