@@ -1,5 +1,7 @@
 # react-redux-typescript-example
 
+Forked from https://github.com/resir014/react-redux-typescript-example
+
 > Demonstrating the common patterns when using React, Redux v4, and TypeScript.
 
 Welcome to the Redux 4 + TypeScript 3.3 example! This example site shows you the ideal
