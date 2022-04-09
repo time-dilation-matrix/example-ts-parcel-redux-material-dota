@@ -16,7 +16,7 @@
     "emotion-theming": "^9.2.9",
     "history": "^4.7.2",
     "http2": "^3.3.7",
-    "moment": "^2.22.2",
+    "moment": "^2.29.2",
     "polished": "^2.3.0",
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
